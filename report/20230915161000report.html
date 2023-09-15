@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>砼联数科自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>砼联数科自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2023-09-15 16:10:01</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:48.021112</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Error 3</p>
+
+<p class='description'>砼联数科自动化测试报告</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_authentication.TestAuth</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_auth_01: 实名认证成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_authentication.py", line 35, in test_auth_01
+    ah.auth_business_shop('营业执照.png',"北京市","北京市","朝阳区")
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\auth_page.py", line 84, in auth_business_shop
+    self.click(AuthBage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_authentication.py", line 35, in test_auth_01
+    ah.auth_business_shop('营业执照.png',"北京市","北京市","朝阳区")
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\auth_page.py", line 84, in auth_business_shop
+    self.click(AuthBage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_auth_02: 认证失败：重复认证</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_authentication.py", line 54, in test_auth_02
+    ah.auth_business_shop('营业执照.png', "北京市", "北京市", "朝阳区")
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\auth_page.py", line 84, in auth_business_shop
+    self.click(AuthBage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_authentication.py", line 54, in test_auth_02
+    ah.auth_business_shop('营业执照.png', "北京市", "北京市", "朝阳区")
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\auth_page.py", line 84, in auth_business_shop
+    self.click(AuthBage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_login.TestLogin</td>
+    <td>6</td>
+    <td>5</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',6)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_01_1__1__13730870086__230516___当前机构_砼联数字科技有限公司__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "D:\pythonProject\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_login.py", line 33, in test_login_01
+    lp.goto_merchants_center()
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\login_page.py", line 47, in goto_merchants_center
+    self.click(LoginPage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+Traceback (most recent call last):
+  File "D:\pythonProject\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\test_case\test_login.py", line 33, in test_login_01
+    lp.goto_merchants_center()
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\page_base\login_page.py", line 47, in goto_merchants_center
+    self.click(LoginPage.merchants_center_loc)
+  File "C:\Users\DELL\PycharmProjects\pythonProject3\base1\base_page.py", line 24, in click
+    self.locator_element(loc).click()
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 81, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webelement.py", line 710, in _execute
+    return self._parent.execute(command, params)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "D:\pythonProject\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;li data-v-f982bd5e="" role="menuitem" aria-haspopup="true" class="tag-list el-submenu" tabindex="0"&gt;...&lt;/li&gt; is not clickable at point (1061, 40). Other element would receive the click: &lt;div role="alert" class="el-message el-message--success" style="top: 20px; z-index: 2000;"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002C6463+2188387]
+	Ordinal0 [0x0025E461+1762401]
+	Ordinal0 [0x00173D78+802168]
+	Ordinal0 [0x001A7F9B+1015707]
+	Ordinal0 [0x001A5F68+1007464]
+	Ordinal0 [0x001A3C6B+998507]
+	Ordinal0 [0x001A29D9+993753]
+	Ordinal0 [0x00198613+951827]
+	Ordinal0 [0x001BC7DC+1099740]
+	Ordinal0 [0x00197FF4+950260]
+	Ordinal0 [0x001BC9F4+1100276]
+	Ordinal0 [0x001CCC22+1166370]
+	Ordinal0 [0x001BC5F6+1099254]
+	Ordinal0 [0x00196BE0+945120]
+	Ordinal0 [0x00197AD6+948950]
+	GetHandleVerifier [0x005671F2+2712546]
+	GetHandleVerifier [0x0055886D+2652765]
+	GetHandleVerifier [0x0035002A+520730]
+	GetHandleVerifier [0x0034EE06+516086]
+	Ordinal0 [0x0026468B+1787531]
+	Ordinal0 [0x00268E88+1805960]
+	Ordinal0 [0x00268F75+1806197]
+	Ordinal0 [0x00271DF1+1842673]
+	BaseThreadInitThunk [0x76BD7BA9+25]
+	RtlInitializeExceptionChain [0x774FB79B+107]
+	RtlClearBits [0x774FB71F+191]
+	(No symbol) [0x00000000]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_01_2__2___137308700861___230516___手机号码格式不正确__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_01_3__3__1373087008__230516___手机号码格式不正确__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_01_4__4______230516___请输入手机号码__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_01_5__5__13730870086_______请输入短信验证码__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_01_6__6__13730870086__230515___验证码错误_请检查__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>8</td>
+    <td>5</td>
+    <td>0</td>
+    <td>3</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
