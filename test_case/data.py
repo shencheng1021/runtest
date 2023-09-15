@@ -20,6 +20,7 @@ driver = webdriver.Chrome()
 filepath=os.path.abspath(os.path.dirname(__file__)).split("test_case")[0]
 print(filepath)
 
+
 driver.get('http://172.24.100.75:10006/#/login')
 driver.implicitly_wait(10)
 driver.maximize_window()
