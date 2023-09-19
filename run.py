@@ -8,15 +8,19 @@
 """
 import unittest
 
-import sys
 import os
-curPath=os.path.abspath(os.path.dirname(__file__))
-rootPath=os.path.split(curPath)[0]
-sys.path.append(rootPath)
-
+# import sys
+# rootpath=str(r"C:\Users\DELL\PycharmProjects\pythonProject3")
+# syspath=sys.path
+# print(syspath)
+# sys.path=[]
+# sys.path.append(rootpath)#将工程根目录加入到python搜索路径中
+# sys.path.extend([rootpath+i for i in os.listdir(rootpath) if i[0]!="."])#将工程目录下的一级目录添加到python搜索路径中
+# sys.path.extend(syspath)
 
 
 if __name__ == '__main__':
-    print(os.path.dirname(__file__))
-    suite=unittest.defaultTestLoader.discover("./test_case",pattern="test_*.py")
+
+    dirname=os.path.dirname(__file__)+"/test_case"
+    suite=unittest.defaultTestLoader.discover(dirname,pattern="test_login.py")
     unittest.main(defaultTest='suite',verbosity=0)

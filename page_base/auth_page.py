@@ -80,15 +80,16 @@ class AuthBage(BasePage):
 
     #定义完善企业信息
     def auth_business_shop(self,key,province,city,district):
-        self.quit_iframe()
-        self.click(AuthBage.merchants_center_loc)
-        self.click(AuthBage.enterprise_management_loc)
-        self.click(AuthBage.update_auth_loc)
-        self.upload_file(AuthBage.business_upload_loc,key)
-        time.sleep(5)
-        self.select_value(AuthBage.province_select_loc,province)
-        self.select_value(AuthBage.city_select_loc,city)
-        self.select_value(AuthBage.district_select_loc,district)
+
+            self.quit_iframe()
+            self.click(AuthBage.merchants_center_loc)
+            self.click(AuthBage.enterprise_management_loc)
+            self.click(AuthBage.update_auth_loc)
+            self.upload_file(AuthBage.business_upload_loc,key)
+            time.sleep(5)
+            self.select_value(AuthBage.province_select_loc,province)
+            self.select_value(AuthBage.city_select_loc,city)
+            self.select_value(AuthBage.district_select_loc,district)
 
     #定义完善法人信息
     def auth_lagal_shop(self,idcardfront,idcardbackside,phone):

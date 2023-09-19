@@ -38,7 +38,8 @@ class TestLogin(BaseUtil):
             self.assertEqual(lp.loginfail_check_shop(lp.checkcode_null_loc),result)
         else:
             self.assertEqual(lp.loginfail_check_shop(lp.checkcode_fail_loc),result)
-        self.mylogger.info('********登录测试结束********')
+
+        self.mylogger.info('********登录测试结束，测试结果：********')
 
 
 if __name__ == '__main__':

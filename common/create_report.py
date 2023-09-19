@@ -45,5 +45,3 @@ class Greate_report:
             report.close()   #发送邮件之前一定要关闭文件流
 
 
-if __name__ == '__main__':
-    Greate_report().greate_rp()
