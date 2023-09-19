@@ -22,5 +22,5 @@ import os
 if __name__ == '__main__':
 
     dirname=os.path.dirname(__file__)+"/test_case"
-    suite=unittest.defaultTestLoader.discover(dirname,pattern="test_login.py")
+    suite=unittest.defaultTestLoader.discover(dirname,pattern="test*.py")
     unittest.main(defaultTest='suite',verbosity=0)

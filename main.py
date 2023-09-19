@@ -47,7 +47,7 @@ with open(report_file,'wb') as report:
             #suit.addTest(unittest.TestLoader().loadTestsFromTestCase(te))
             #方法三，start_dir参数指定文件路径，pattern执行规则，‘s*.py’表示以s开头，‘.py’结尾的都加入到测试套件中
     test_dir= abspath+'/test_case/'
-    discover=unittest.defaultTestLoader.discover(start_dir=test_dir,pattern='test_login.py')
+    discover=unittest.defaultTestLoader.discover(start_dir=test_dir,pattern='test*.py')
             #套件结合TextTestRunner对象进行相当于unittest.main()
             #如果结合HTMLTestRunner使用，则需要调用HTMLTestRunner中的运行器
     runner=HTMLTestRunner(stream=report,title=report_title,description=report_desc)
