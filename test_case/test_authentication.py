@@ -51,7 +51,7 @@ class TestAuth(BaseUtil):
         lg.slmode_eshop('child', '17754756655', '230516')
         self.mylogger.info("********************登录结束，进入实名认证操作*********************")
         ah = AuthBage(self.driver)
-        ah.auth_business_shop('营业执照.png', "北京市", "北京市", "朝阳区")
+        ah.auth_business_shop('营业执照.jpg', "北京市", "北京市", "朝阳区")
         ah.auth_lagal_shop('身份证正面.jpg', '身份证背面.jpg', "17754254414")
         ah.auth_contactperson_shop('身份证正面.jpg', '身份证背面.jpg', "17754254414")
         ah.auth_source_shop()
