@@ -20,7 +20,7 @@ class Greate_report:
     def greate_rp(self):
         abspath=os.path.abspath(os.path.dirname(__file__)).split('common')[0]
         report_path= abspath+r'report/'
-        t=time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        t=time.strftime('%Y%m%d',time.localtime(time.time()))
         report_file=report_path+t+'report.html'
         #如果路径不存在就创建一个文件夹
         if not os.path.exists(report_path):
