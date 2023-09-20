@@ -42,6 +42,6 @@ class Greate_report:
             #如果结合HTMLTestRunner使用，则需要调用HTMLTestRunner中的运行器
             runner=HTMLTestRunner(stream=report,title=report_title,description=report_desc)
             runner.run(discover)
-            report.close()   #发送邮件之前一定要关闭文件流
+            report.close()   #发送1邮件之前一定要关闭文件流
 
 
