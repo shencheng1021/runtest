@@ -11,6 +11,8 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
@@ -62,9 +64,15 @@ class BasePage:
         alert = self.driver.switch_to.alert
         return alert.text
 
+    #定义在弹窗上输入内容
     def alert_send_keys(self,key):
         alert = self.driver.switch_to.alert
         alert.send_keys(key)
+
+    #显示等待
+    #定义判断某个元素是否被加到了 dom 树里
+    def presence_of_element_located(self,loc):
+        WebDriverWait(self.driver,10).until(EC.presence_of_element_located(loc))
 
 
 
