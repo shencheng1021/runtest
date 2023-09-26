@@ -25,20 +25,32 @@ filepath=os.path.abspath(os.path.dirname(__file__)).split("test_case")[0]
 # print(filepath)
 
 
-driver.get('http://172.24.100.75:10006/#/login')
-driver.implicitly_wait(10)
-driver.maximize_window()
-driver.switch_to.frame('child')
-time.sleep(2)
-driver.find_element(By.XPATH,"//*[@id='tab-second']").click()
-driver.find_element(By.XPATH, "//input[@placeholder='请输入手机号码']").send_keys('17785425547')
-driver.find_element(By.XPATH, "//div[@class='c-phonecode-input']/div/input").send_keys('230516')
-driver.find_element(By.XPATH, "//span[@class='el-checkbox__inner']").click()
-driver.find_element(By.XPATH, "//div[@class='el-tabs__content']/button").click()
-driver.switch_to.default_content()
-
-WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='el-dropdown']/div")))
+# driver.get('http://172.24.100.75:10006/#/login')
+# driver.implicitly_wait(10)
+# driver.maximize_window()
+# driver.switch_to.frame('child')
+# time.sleep(2)
+# driver.find_element(By.XPATH,"//*[@id='tab-second']").click()
+# driver.find_element(By.XPATH, "//input[@placeholder='请输入手机号码']").send_keys('17785425547')
+# driver.find_element(By.XPATH, "//div[@class='c-phonecode-input']/div/input").send_keys('230516')
+# driver.find_element(By.XPATH, "//span[@class='el-checkbox__inner']").click()
+# driver.find_element(By.XPATH, "//div[@class='el-tabs__content']/button").click()
+# driver.switch_to.default_content()
+#
+# WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//div[@class='el-dropdown']/div")))
 driver.get("http://172.24.100.75:10006/#/market/detail/e-index")
+driver.maximize_window()
+time.sleep(2)
+driver.find_element(By.XPATH,"//span[contains(text(),'立即申请')]").click()
+
+loc=(By.XPATH,"//div[@class='el-message-box__message']/p")
+
+locater=WebDriverWait(driver,10).until(EC.visibility_of_element_located(loc))
+print(locater.text)
+
+
+
+
 
 
 

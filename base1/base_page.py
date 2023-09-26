@@ -74,6 +74,11 @@ class BasePage:
     def presence_of_element_located(self,loc):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located(loc))
 
+    #定义等待一个元素是否出现的关键字
+    def visibility_of_element_located(self,loc):
+        text=WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(loc)).text
+        return text
+
 
 
 
